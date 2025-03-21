@@ -1,3 +1,5 @@
+"use client"
+
 import Link from "next/link"
 import { GradientBackground } from "../components/gradient-background"
 import { Header } from "../components/header"
@@ -6,12 +8,21 @@ import { BlogArticleCard } from "../components/blog-article-card"
 import { BlogSearch } from "../components/blog-search"
 import { AnimatedHero } from "../components/animated-hero"
 import { getSortedPostsData } from "@/lib/blog"
-import { Suspense } from "react"
+import { Suspense, useEffect, useState } from "react"
+import { CtaSection } from "../components/cta-section"
 
 export const dynamic = "force-dynamic"
 
 export default function BlogPage() {
-  const allPosts = getSortedPostsData()
+  const [allPosts, setAllPosts] = useState([])
+  
+  useEffect(() => {
+    const posts = getSortedPostsData()
+    setAllPosts(posts)
+    
+    // Update page title
+    document.title = "Blog | Disequi"
+  }, [])
 
   return (
     <div className="min-h-screen font-sans selection:bg-green-400/20 text-green-400 relative">
@@ -56,6 +67,12 @@ export default function BlogPage() {
               <p className="text-green-400/80">No articles found.</p>
             </div>
           )}
+
+          {/* CTA Section */}
+          <CtaSection
+            title="Ready to Transform Your Business?"
+            description="Let's work together to achieve your goals and drive sustainable growth."
+          />
 
           {/* Footer Component */}
           <Footer />
