@@ -3,8 +3,8 @@
 import Link from "next/link"
 import { ArrowRight, GitBranch, GitMerge, Lightbulb, Rocket } from "lucide-react"
 import { GradientBackground } from "../components/gradient-background"
-import { MobileMenu } from "../components/mobile-menu"
-import { NewsletterSubscription } from "../components/newsletter-subscription"
+import { Header } from "../components/header"
+import { Footer } from "../components/footer"
 import { motion } from "framer-motion"
 import { AnimatedHero, fadeUpVariants } from "../components/animated-hero"
 
@@ -16,36 +16,7 @@ export default function ProcessPage() {
       <div className="container mx-auto px-4 py-8 relative">
         <div className="grid grid-cols-4 gap-4">
           {/* Header */}
-          <div className="col-span-4 border border-green-400/20 bg-black/30 backdrop-blur-sm relative z-40">
-            <div className="p-4">
-              <div className="flex items-center justify-between">
-                <Link href="/" className="text-2xl font-bold tracking-wider font-mono">
-                  DISEQUI<span className="text-xs ml-1 opacity-60">LLC</span>
-                </Link>
-                <nav className="hidden md:flex space-x-8">
-                  <Link href="/" className="text-green-400/60 hover:text-green-400 transition-colors">
-                    Home
-                  </Link>
-                  <Link href="/about" className="text-green-400/60 hover:text-green-400 transition-colors">
-                    About
-                  </Link>
-                  <Link href="/services" className="text-green-400/60 hover:text-green-400 transition-colors">
-                    Services
-                  </Link>
-                  <Link href="/process" className="text-green-400 font-bold">
-                    Process
-                  </Link>
-                  <Link href="/blog" className="text-green-400/60 hover:text-green-400 transition-colors">
-                    Blog
-                  </Link>
-                  <Link href="/contact" className="text-green-400/60 hover:text-green-400 transition-colors">
-                    Contact
-                  </Link>
-                </nav>
-                <MobileMenu />
-              </div>
-            </div>
-          </div>
+          <Header />
 
           {/* Process Intro */}
           <div className="col-span-4 border border-green-400/20 bg-black/30 backdrop-blur-sm relative overflow-hidden">
@@ -178,30 +149,7 @@ export default function ProcessPage() {
           </div>
 
           {/* Footer */}
-          <div className="col-span-4 border border-green-400/20 p-8 bg-black/30 backdrop-blur-sm">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div>
-                <div className="text-2xl font-bold tracking-wider font-mono mb-4">
-                  DISEQUI<span className="text-xs ml-1 opacity-60">LLC</span>
-                </div>
-                <p className="text-sm text-green-400/80 mb-4">
-                  Transforming ideas into successful ventures through innovative strategies and balanced growth.
-                </p>
-                <div className="text-sm text-green-400/40">© 2025 Disequi LLC. All rights reserved.</div>
-              </div>
-              <div>
-                <NewsletterSubscription />
-              </div>
-            </div>
-            <div className="mt-8 pt-8 border-t border-green-400/20 flex justify-center space-x-6">
-              <Link href="/privacy" className="text-sm text-green-400/40 hover:text-green-400 transition-colors">
-                Privacy Policy
-              </Link>
-              <Link href="/terms" className="text-sm text-green-400/40 hover:text-green-400 transition-colors">
-                Terms of Service
-              </Link>
-            </div>
-          </div>
+          <Footer />
         </div>
       </div>
     </div>

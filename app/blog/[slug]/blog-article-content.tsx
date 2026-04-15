@@ -2,7 +2,6 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import Head from "next/head"
 import { GradientBackground } from "../../components/gradient-background"
 import { Header } from "../../components/header"
 import { NewsletterSubscription } from "../../components/newsletter-subscription"

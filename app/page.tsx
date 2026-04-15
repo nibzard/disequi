@@ -11,6 +11,7 @@ import { useInView } from "react-intersection-observer"
 import { ErrorBoundary } from "./components/error-boundary"
 import { SuppressConsoleErrors } from "./components/suppress-console-errors"
 import { Footer } from "./components/footer"
+import { CtaSection } from "./components/cta-section"
 
 // Lazy load heavy components
 const WaveVisualization = lazy(() =>
@@ -218,42 +219,10 @@ export default function LandingPage() {
           </div>
 
           {/* CTA Section */}
-          <div className="col-span-4 border border-green-400/20 p-8 bg-black/30 backdrop-blur-sm flex flex-col justify-center relative overflow-hidden">
-            <div className="absolute inset-0 opacity-10">
-              <Suspense fallback={<LoadingFallback />}>
-                <WaveVisualization />
-              </Suspense>
-            </div>
-            <div className="relative z-10">
-              <motion.h2
-                custom={11}
-                variants={fadeUpVariants}
-                initial="hidden"
-                animate="visible"
-                className="text-2xl font-bold mb-4 font-mono"
-              >
-                Ready to Transform?
-              </motion.h2>
-              <motion.p
-                custom={12}
-                variants={fadeUpVariants}
-                initial="hidden"
-                animate="visible"
-                className="mb-6 text-green-400/80"
-              >
-                Let's discuss how we can help you achieve your goals.
-              </motion.p>
-              <motion.div custom={13} variants={fadeUpVariants} initial="hidden" animate="visible">
-                <Link
-                  href="/contact"
-                  className="bg-green-400 text-black hover:bg-green-300 transition-colors font-mono px-6 py-3 text-center inline-block w-full sm:w-auto"
-                >
-                  Contact Us
-                  <ArrowRight className="ml-2 inline-block" />
-                </Link>
-              </motion.div>
-            </div>
-          </div>
+          <CtaSection
+            title="Ready to Transform Your Business?"
+            description="Let's work together to achieve your goals and drive sustainable growth."
+          />
 
           <Footer />
         </div>

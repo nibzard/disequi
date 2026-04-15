@@ -1,5 +1,3 @@
-"use client"
-
 import Link from "next/link"
 import { GradientBackground } from "../components/gradient-background"
 import { Header } from "../components/header"
@@ -8,21 +6,17 @@ import { BlogArticleCard } from "../components/blog-article-card"
 import { BlogSearch } from "../components/blog-search"
 import { AnimatedHero } from "../components/animated-hero"
 import { getSortedPostsData } from "@/lib/blog"
-import { Suspense, useEffect, useState } from "react"
+import { Suspense } from "react"
 import { CtaSection } from "../components/cta-section"
 
 export const dynamic = "force-dynamic"
+export const metadata = {
+  title: "Blog | Disequi",
+  description: "Explore our latest thoughts on business transformation, innovation, and achieving equilibrium."
+}
 
 export default function BlogPage() {
-  const [allPosts, setAllPosts] = useState([])
-  
-  useEffect(() => {
-    const posts = getSortedPostsData()
-    setAllPosts(posts)
-    
-    // Update page title
-    document.title = "Blog | Disequi"
-  }, [])
+  const allPosts = getSortedPostsData()
 
   return (
     <div className="min-h-screen font-sans selection:bg-green-400/20 text-green-400 relative">

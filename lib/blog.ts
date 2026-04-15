@@ -6,6 +6,7 @@ import rehypeHighlight from "rehype-highlight"
 import rehypeSlug from "rehype-slug"
 import rehypeAutolinkHeadings from "rehype-autolink-headings"
 import remarkGfm from "remark-gfm"
+import rehypeRaw from "rehype-raw"
 
 const postsDirectory = path.join(process.cwd(), "content/blog")
 
@@ -147,9 +148,10 @@ export async function getPostData(slug: string): Promise<BlogPost> {
     mdxOptions: {
       remarkPlugins: [remarkGfm],
       rehypePlugins: [
+        rehypeRaw, // Add rehypeRaw to process HTML, allowing mermaid diagrams to be preserved
         rehypeSlug,
         [rehypeAutolinkHeadings, { behavior: "wrap" }],
-        rehypeHighlight,
+        [rehypeHighlight, { ignoreMissing: true }], // Add ignoreMissing option to prevent errors on mermaid blocks
       ],
     },
     scope: matterResult.data,

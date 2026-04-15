@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+  
+  <!-- Background grid -->
+  <g stroke="#1F2937" stroke-width="0.5" opacity="0.15">
+    <!-- Horizontal lines -->
+    <line x1="0" y1="0" x2="800" y2="0" />
+    <line x1="0" y1="50" x2="800" y2="50" />
+    <line x1="0" y1="100" x2="800" y2="100" />
+    <line x1="0" y1="150" x2="800" y2="150" />
+    <line x1="0" y1="200" x2="800" y2="200" />
+    <line x1="0" y1="250" x2="800" y2="250" />
+    <line x1="0" y1="300" x2="800" y2="300" />
+    <line x1="0" y1="350" x2="800" y2="350" />
+    <line x1="0" y1="400" x2="800" y2="400" />
+    <line x1="0" y1="450" x2="800" y2="450" />
+    <line x1="0" y1="500" x2="800" y2="500" />
+    <line x1="0" y1="550" x2="800" y2="550" />
+    <line x1="0" y1="600" x2="800" y2="600" />
+    
+    <!-- Vertical lines -->
+    <line x1="0" y1="0" x2="0" y2="600" />
+    <line x1="50" y1="0" x2="50" y2="600" />
+    <line x1="100" y1="0" x2="100" y2="600" />
+    <line x1="150" y1="0" x2="150" y2="600" />
+    <line x1="200" y1="0" x2="200" y2="600" />
+    <line x1="250" y1="0" x2="250" y2="600" />
+    <line x1="300" y1="0" x2="300" y2="600" />
+    <line x1="350" y1="0" x2="350" y2="600" />
+    <line x1="400" y1="0" x2="400" y2="600" />
+    <line x1="450" y1="0" x2="450" y2="600" />
+    <line x1="500" y1="0" x2="500" y2="600" />
+    <line x1="550" y1="0" x2="550" y2="600" />
+    <line x1="600" y1="0" x2="600" y2="600" />
+    <line x1="650" y1="0" x2="650" y2="600" />
+    <line x1="700" y1="0" x2="700" y2="600" />
+    <line x1="750" y1="0" x2="750" y2="600" />
+    <line x1="800" y1="0" x2="800" y2="600" />
+  </g>
+  
+  <!-- Connection lines -->
+  <g stroke="#34D399" stroke-width="1.5" stroke-opacity="0.3">
+    <line x1="200" y1="150" x2="350" y2="300" />
+    <line x1="350" y1="300" x2="500" y2="200" />
+    <line x1="350" y1="300" x2="400" y2="450" />
+    <line x1="500" y1="200" x2="600" y2="350" />
+    <line x1="350" y1="300" x2="250" y2="400" />
+    <line x1="400" y1="450" x2="600" y2="350" />
+    <line x1="400" y1="450" x2="250" y2="400" />
+  </g>
+  
+  <!-- Data flow animations -->
+  <g stroke="#34D399" stroke-width="2">
+    <circle r="4" fill="#34D399" opacity="0.7">
+      <animate attributeName="cx" values="200;350" dur="3s" repeatCount="indefinite" />
+      <animate attributeName="cy" values="150;300" dur="3s" repeatCount="indefinite" />
+    </circle>
+    
+    <circle r="4" fill="#34D399" opacity="0.7">
+      <animate attributeName="cx" values="350;500" dur="2s" repeatCount="indefinite" />
+      <animate attributeName="cy" values="300;200" dur="2s" repeatCount="indefinite" />
+    </circle>
+    
+    <circle r="4" fill="#34D399" opacity="0.7">
+      <animate attributeName="cx" values="350;400" dur="2.5s" repeatCount="indefinite" />
+      <animate attributeName="cy" values="300;450" dur="2.5s" repeatCount="indefinite" />
+    </circle>
+    
+    <circle r="4" fill="#34D399" opacity="0.7">
+      <animate attributeName="cx" values="500;600" dur="3.5s" repeatCount="indefinite" />
+      <animate attributeName="cy" values="200;350" dur="3.5s" repeatCount="indefinite" />
+    </circle>
+    
+    <circle r="4" fill="#34D399" opacity="0.7">
+      <animate attributeName="cx" values="350;250" dur="2.8s" repeatCount="indefinite" />
+      <animate attributeName="cy" values="300;400" dur="2.8s" repeatCount="indefinite" />
+    </circle>
+    
+    <circle r="4" fill="#34D399" opacity="0.7">
+      <animate attributeName="cx" values="400;600" dur="3.2s" repeatCount="indefinite" />
+      <animate attributeName="cy" values="450;350" dur="3.2s" repeatCount="indefinite" />
+    </circle>
+    
+    <circle r="4" fill="#34D399" opacity="0.7">
+      <animate attributeName="cx" values="400;250" dur="2.7s" repeatCount="indefinite" />
+      <animate attributeName="cy" values="450;400" dur="2.7s" repeatCount="indefinite" />
+    </circle>
+  </g>
+  
+  <!-- Nodes -->
+  <g filter="url(#glow)">
+    <circle cx="200" cy="150" r="12" fill="#34D399" fill-opacity="0.6" stroke="#34D399" stroke-width="2" />
+    <circle cx="350" cy="300" r="16" fill="#34D399" fill-opacity="0.6" stroke="#34D399" stroke-width="2" />
+    <circle cx="500" cy="200" r="12" fill="#34D399" fill-opacity="0.6" stroke="#34D399" stroke-width="2" />
+    <circle cx="600" cy="350" r="14" fill="#34D399" fill-opacity="0.6" stroke="#34D399" stroke-width="2" />
+    <circle cx="400" cy="450" r="12" fill="#34D399" fill-opacity="0.6" stroke="#34D399" stroke-width="2" />
+    <circle cx="250" cy="400" r="10" fill="#34D399" fill-opacity="0.6" stroke="#34D399" stroke-width="2" />
+    
+    <!-- Pulse animations for nodes -->
+    <circle cx="200" cy="150" r="12">
+      <animate attributeName="r" values="12;18;12" dur="3s" repeatCount="indefinite" />
+      <animate attributeName="fill-opacity" values="0.6;0.2;0.6" dur="3s" repeatCount="indefinite" />
+    </circle>
+    
+    <circle cx="350" cy="300" r="16">
+      <animate attributeName="r" values="16;24;16" dur="4s" repeatCount="indefinite" />
+      <animate attributeName="fill-opacity" values="0.6;0.2;0.6" dur="4s" repeatCount="indefinite" />
+    </circle>
+    
+    <circle cx="500" cy="200" r="12">
+      <animate attributeName="r" values="12;18;12" dur="3.5s" repeatCount="indefinite" />
+      <animate attributeName="fill-opacity" values="0.6;0.2;0.6" dur="3.5s" repeatCount="indefinite" />
+    </circle>
+    
+    <circle cx="600" cy="350" r="14">
+      <animate attributeName="r" values="14;21;14" dur="4.5s" repeatCount="indefinite" />
+      <animate attributeName="fill-opacity" values="0.6;0.2;0.6" dur="4.5s" repeatCount="indefinite" />
+    </circle>
+    
+    <circle cx="400" cy="450" r="12">
+      <animate attributeName="r" values="12;18;12" dur="5s" repeatCount="indefinite" />
+      <animate attributeName="fill-opacity" values="0.6;0.2;0.6" dur="5s" repeatCount="indefinite" />
+    </circle>
+    
+    <circle cx="250" cy="400" r="10">
+      <animate attributeName="r" values="10;15;10" dur="3.8s" repeatCount="indefinite" />
+      <animate attributeName="fill-opacity" values="0.6;0.2;0.6" dur="3.8s" repeatCount="indefinite" />
+    </circle>
+  </g>
+</svg>

@@ -10,6 +10,7 @@ interface DynamicThumbnailProps {
   height?: number
   className?: string
   animated?: boolean
+  alt?: string
 }
 
 export function DynamicThumbnail({
@@ -18,6 +19,7 @@ export function DynamicThumbnail({
   height = 200,
   className = "",
   animated = true,
+  alt = "Generated thumbnail image",
 }: DynamicThumbnailProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const animationRef = useRef<number>()
@@ -128,8 +130,18 @@ export function DynamicThumbnail({
   }, [seed, width, height, config, animated])
 
   return (
-    <motion.div className={`relative overflow-hidden ${className}`} animate={controls}>
-      <canvas ref={canvasRef} width={width} height={height} className="w-full h-full object-cover" />
+    <motion.div 
+      className={`relative overflow-hidden ${className}`} 
+      animate={controls}
+      role="img"
+      aria-label={alt}
+    >
+      <canvas 
+        ref={canvasRef} 
+        width={width} 
+        height={height} 
+        className="w-full h-full object-cover" 
+      />
       <motion.div
         className="absolute inset-0 bg-green-400 pointer-events-none"
         initial={{ opacity: 0 }}
@@ -138,4 +150,3 @@ export function DynamicThumbnail({
     </motion.div>
   )
 }
-

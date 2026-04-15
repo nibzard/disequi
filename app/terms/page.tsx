@@ -1,7 +1,8 @@
 import Link from "next/link"
 import { ArrowLeft } from "lucide-react"
 import { GradientBackground } from "../components/gradient-background"
-import { MobileMenu } from "../components/mobile-menu"
+import { Header } from "../components/header"
+import { Footer } from "../components/footer"
 
 export default function TermsPage() {
   return (
@@ -11,36 +12,7 @@ export default function TermsPage() {
       <div className="container mx-auto px-4 py-8 relative">
         <div className="grid grid-cols-4 gap-4">
           {/* Header */}
-          <div className="col-span-4 border border-green-400/20 bg-black/30 backdrop-blur-sm relative z-40">
-            <div className="p-4">
-              <div className="flex items-center justify-between">
-                <Link href="/" className="text-2xl font-bold tracking-wider font-mono">
-                  DISEQUI<span className="text-xs ml-1 opacity-60">LLC</span>
-                </Link>
-                <nav className="hidden md:flex space-x-8">
-                  <Link href="/" className="text-green-400/60 hover:text-green-400 transition-colors">
-                    Home
-                  </Link>
-                  <Link href="/about" className="text-green-400/60 hover:text-green-400 transition-colors">
-                    About
-                  </Link>
-                  <Link href="/services" className="text-green-400/60 hover:text-green-400 transition-colors">
-                    Services
-                  </Link>
-                  <Link href="/process" className="text-green-400/60 hover:text-green-400 transition-colors">
-                    Process
-                  </Link>
-                  <Link href="/blog" className="text-green-400/60 hover:text-green-400 transition-colors">
-                    Blog
-                  </Link>
-                  <Link href="/contact" className="text-green-400/60 hover:text-green-400 transition-colors">
-                    Contact
-                  </Link>
-                </nav>
-                <MobileMenu />
-              </div>
-            </div>
-          </div>
+          <Header />
 
           {/* Terms of Service Content */}
           <div className="col-span-4 border border-green-400/20 p-8 bg-black/30 backdrop-blur-sm">
@@ -123,19 +95,7 @@ export default function TermsPage() {
           </div>
 
           {/* Footer */}
-          <div className="col-span-4 border border-green-400/20 p-4 bg-black/30 backdrop-blur-sm">
-            <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-              <div className="text-sm text-green-400/40">© 2025 Disequi LLC. All rights reserved.</div>
-              <div className="flex space-x-6">
-                <Link href="/privacy" className="text-sm text-green-400/40 hover:text-green-400 transition-colors">
-                  Privacy
-                </Link>
-                <Link href="/terms" className="text-sm text-green-400 hover:text-green-400 transition-colors">
-                  Terms
-                </Link>
-              </div>
-            </div>
-          </div>
+          <Footer />
         </div>
       </div>
     </div>
